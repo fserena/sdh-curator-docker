@@ -7,6 +7,8 @@ ENV HOME /usr/lib/sdhcurator
 RUN virtualenv $HOME/.env
 WORKDIR /usr/lib/sdhcurator
 
+RUN pip install SDH-Curator
+
 # Configure runit
 ADD ./my_init.d/ /etc/my_init.d/
 ONBUILD ./my_init.d/ /etc/my_init.d/
